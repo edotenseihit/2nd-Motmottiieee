@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rafa &amp; Cali · 2nd Monthsary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Mea+Culpa&family=Cinzel:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff5f9;--card:#ffffff;--ink:#4a2a3a;--pink:#e8588a;--blue:#5aa5e8;--soft:#fbd3e1;color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1220;--card:#2a1a2e;--ink:#ffe4ec;--pink:#ff8fb5;--blue:#7bbcff;--soft:#4a2a3c;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1c1220;--card:#2a1a2e;--ink:#ffe4ec;--pink:#ff8fb5;--blue:#7bbcff;--soft:#4a2a3c;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 56px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;font-size:20px;font-weight:300;letter-spacing:.03em}
+nav{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;gap:18px;overflow-x:auto;padding:calc(env(safe-area-inset-top,0px) + 14px) 16px 12px;background:rgba(20,10,25,.55);backdrop-filter:blur(8px);scrollbar-width:none}
+nav a{color:#fff;text-decoration:none;font-family:Cinzel,Georgia,serif;letter-spacing:.28em;font-size:11px;text-transform:uppercase;white-space:nowrap}
+.hero{position:relative;height:100svh;min-height:520px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;background:linear-gradient(135deg,#f6a6c1,#8ec5ff);overflow:hidden}
+.slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.6s}
+.slide.on{opacity:1}
+.hero:after{content:"";position:absolute;inset:0;background:rgba(20,10,30,.45)}
+.hero>*:not(.slide){position:relative;z-index:2}
+.small{font-family:Cinzel,Georgia,serif;letter-spacing:.5em;font-size:12px;text-transform:uppercase}
+.names{font-family:"Mea Culpa",cursive;font-size:clamp(68px,22vw,132px);margin:18px 0;line-height:1.1;font-weight:400}
+.date{font-family:Cinzel,Georgia,serif;letter-spacing:.3em;font-size:13px}
+section{padding:72px 22px;max-width:760px;margin:0 auto;text-align:center}
+h2{font-family:"Mea Culpa",cursive;font-weight:400;font-size:62px;color:var(--pink);margin:0 0 22px}
+.cd{display:flex;gap:10px;justify-content:center;margin:20px 0}
+.cd div{background:var(--card);border-radius:16px;padding:14px 8px;min-width:68px;box-shadow:0 4px 18px rgba(232,88,138,.18)}
+.cd b{display:block;font-size:34px;color:var(--blue)}
+.cd span{font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+.letter{background:var(--card);border-radius:20px;padding:30px 24px;text-align:left;line-height:1.7;box-shadow:0 4px 20px rgba(90,165,232,.2);border-top:6px solid var(--pink)}
+.letter p{margin:0 0 14px;white-space:pre-line}
+.tl{display:flex;flex-direction:column;gap:16px;text-align:left}
+.mem{background:var(--card);border-radius:18px;padding:20px;border-left:6px solid var(--blue);box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.mem small{color:var(--pink);letter-spacing:.2em;text-transform:uppercase}
+.mem h3{margin:4px 0 6px;font-size:24px}
+.mem img{width:100%;border-radius:12px;margin-top:10px}
+video{width:100%;border-radius:18px;background:#000}
+.ph{background:linear-gradient(135deg,var(--soft),var(--card));border-radius:18px;padding:60px 20px}
+.big{font-size:clamp(64px,22vw,120px);color:var(--blue);letter-spacing:.15em;font-weight:300;margin:6px 0}
+button{background:var(--pink);color:#fff;border:0;border-radius:999px;padding:13px 30px;font-size:18px;font-family:inherit;cursor:pointer}
+#wish{min-height:64px;margin-top:18px;font-style:italic}
+.star{position:fixed;bottom:-30px;font-size:24px;animation:up 3s linear forwards;pointer-events:none;z-index:20}
+@keyframes up{to{transform:translateY(-110vh) rotate(40deg);opacity:0}}
+footer{text-align:center;padding:30px 20px 50px;font-family:"Mea Culpa",cursive;font-size:40px;color:var(--pink)}
+</style>
+</head>
+<body>
+<nav><a href="#home">Home</a><a href="#count">Countdown</a><a href="#letter">Letter</a><a href="#memories">Memories</a><a href="#video">Our Video</a><a href="#eleven">11:11</a></nav>
+
+<header class="hero" id="home">
+  <div class="small">Happy 2nd Monthsary</div>
+  <div class="names">Rafa &amp; Cali</div>
+  <div class="date">November 11, 2026 · 11:11</div>
+</header>
+
+<section id="count">
+  <h2>Countdown</h2>
+  <div id="cdMsg">Until our 2nd monthsary</div>
+  <div class="cd" id="cd"></div>
+</section>
+
+<section id="letter">
+  <h2>A Letter for You</h2>
+  <div class="letter" id="letterBox"></div>
+</section>
+
+<section id="memories">
+  <h2>Our Memories</h2>
+  <div class="tl" id="tl"></div>
+</section>
+
+<section id="video">
+  <h2>Our Video</h2>
+  <div id="vbox"></div>
+</section>
+
+<section id="eleven">
+  <h2>Make a Wish</h2>
+  <div class="big">11:11</div>
+  <div>When you see 11:11, make a wish, love.</div><br>
+  <button id="wb">Make a wish ✨</button>
+  <div id="wish"></div>
+</section>
+<footer>Rafa &amp; Cali, 11.11.2026</footer>
+
+<script>
+// ---- Edit these ----
+var PHOTOS = ["mirror.jpg","booth2.jpg","brown.jpg","kiss.jpg","booth1.jpg","booth3.jpg","booth4.jpg","sick.jpg"];   // list of image URLs for the hero slideshow
+var VIDEO = "video.mp4";    // put your video in the same folder and name it video.mp4
+var TARGET = new Date(2026, 10, 11, 0, 0, 0); // Nov 11, 2026, local time
+var LETTER = [
+  "Hi bebu,",
+  "It’s been two months, and I want to say how happy I am to have you with me, even though we’re far from each other.",
+  "I know there are days when you feel sad and upset because I can’t be with you. I understand, and I don’t take that lightly. I always think of you, even when I’m busy.",
+  "Thank you for understanding, for our calls and our talks, and for just being you. I promise I’ll find a way for us to meet, and when we do, I’ll hug you tight.",
+  "Happy 2nd monthsary, Cali. I love you so much.",
+  "Love,\nRafa"
+];
+var MEMORIES = [
+  {d:"Date", t:"Our first memory", x:"Write the story of this memory here.", p:0},
+  {d:"Date", t:"A day I love", x:"Write the story of this memory here.", p:1},
+  {d:"Date", t:"Our favorite moment", x:"Write the story of this memory here.", p:2}
+];
+var WISHES = ["I hope we get to see each other soon 💗","I hope there are many more monthsaries to come 💙","I hope you’re always happy, love ✨"];
+// --------------------
+
+var heroEl = document.getElementById("home"), slides = [], cur = 0;
+PHOTOS.forEach(function(u,k){var s=document.createElement("div");s.className="slide"+(k===0?" on":"");s.style.backgroundImage="url("+u+")";heroEl.insertBefore(s,heroEl.firstChild);slides.push(s);});
+if (slides.length > 1) setInterval(function(){slides[cur].classList.remove("on");cur=(cur+1)%slides.length;slides[cur].classList.add("on");},5000);
+
+var cdEl = document.getElementById("cd"), cdMsg = document.getElementById("cdMsg");
+function tick(){
+  var ms = TARGET - new Date();
+  if (ms <= 0) { cdMsg.textContent = "Happy 2nd Monthsary, Cali! 💗"; cdEl.innerHTML = ""; return; }
+  var s = Math.floor(ms/1000), v = [Math.floor(s/86400), Math.floor(s%86400/3600), Math.floor(s%3600/60), s%60], l = ["Days","Hours","Mins","Secs"];
+  cdEl.innerHTML = v.map(function(n,k){return "<div><b>"+n+"</b><span>"+l[k]+"</span></div>";}).join("");
+}
+tick(); setInterval(tick,1000);
+
+var lb = document.getElementById("letterBox");
+LETTER.forEach(function(t){var p=document.createElement("p");p.textContent=t;lb.appendChild(p);});
+
+var tl = document.getElementById("tl");
+MEMORIES.forEach(function(m){
+  var d=document.createElement("div");d.className="mem";
+  var a=document.createElement("small");a.textContent=m.d;
+  var h=document.createElement("h3");h.textContent=m.t;
+  var p=document.createElement("div");p.textContent=m.x;
+  d.appendChild(a);d.appendChild(h);d.appendChild(p);
+  if (PHOTOS[m.p]) {var i=document.createElement("img");i.src=PHOTOS[m.p];i.alt="";d.appendChild(i);}
+  tl.appendChild(d);
+});
+
+var vb = document.getElementById("vbox");
+if (VIDEO) { var v=document.createElement("video");v.src=VIDEO;v.controls=true;v.playsInline=true;vb.appendChild(v); }
+else { vb.innerHTML = '<div class="ph">Our video is coming soon 🎬</div>'; }
+
+document.getElementById("wb").onclick = function(){
+  document.getElementById("wish").textContent = WISHES[Math.floor(Math.random()*WISHES.length)];
+  for (var k=0;k<14;k++){var s=document.createElement("div");s.className="star";s.textContent=["✨","💗","💙","⭐"][k%4];s.style.left=Math.random()*95+"%";s.style.animationDelay=(Math.random()*.8)+"s";document.body.appendChild(s);setTimeout(function(x){x.remove();}.bind(null,s),4200);}
+};
+var n = new Date();
+if (n.getMonth()===10 && n.getDate()===11 && n.getMinutes()===11 && (n.getHours()%12)===11) document.getElementById("wb").click();
+</script>
+</body>
+</html>
